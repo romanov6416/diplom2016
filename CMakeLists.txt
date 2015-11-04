@@ -4,7 +4,7 @@ project(runos)
 include(third_party/configure.cmake)
 
 set(CMAKE_CXX_FLAGS
-    "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Werror")
+        "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Werror")
 
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
@@ -17,15 +17,17 @@ find_package(PkgConfig)
 pkg_check_modules(GLOG REQUIRED libglog)
 
 include_directories(SYSTEM
-    ${GLOG_INCLUDE_DIRS}
-    ${Boost_INCLUDE_DIRS}
-    ${CMAKE_BINARY_DIR}/prefix/include
+        ${GLOG_INCLUDE_DIRS}
+        ${Boost_INCLUDE_DIRS}
+        ${CMAKE_BINARY_DIR}/prefix/include
+        ${CMAKE_SOURCE_DIR}/build/prefix/include
 )
 
 link_directories(
-    ${GLOG_LIBRARY_DIRS}
-    ${Boost_LIBRARY_DIRS}
-    ${CMAKE_BINARY_DIR}/prefix/lib
+        ${GLOG_LIBRARY_DIRS}
+        ${Boost_LIBRARY_DIRS}
+        ${CMAKE_BINARY_DIR}/prefix/lib
+        ${CMAKE_SOURCE_DIR}/build/prefix/lib
 )
 
 add_subdirectory(src)

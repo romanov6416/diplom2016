@@ -34,7 +34,7 @@ set(SOURCES
     FlowManager.cc
     # Json
     json11.cpp
-)
+        MyApp.cc MyApp.hh MyApp.cc MyApp.hh)
 
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR} # for Qt-generated moc files

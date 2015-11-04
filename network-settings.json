@@ -10,7 +10,8 @@
         "stp",
         "static-flow-pusher",
         "arp-handler",
-        "flow-manager"
+        "flow-manager",
+        "myapp"
     ],
 
     "rest-listener" : {
